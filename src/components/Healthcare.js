@@ -1,10 +1,11 @@
 import React from 'react'
 import trafalgarImg from '../images/trafalgar-header.svg'
 import { Dot } from "./Dots";
+import { motion } from "framer-motion";
 
 const Healthcare = () => {
   return (
-    <div className="flex ">
+    <motion.div className="flex mt-24" animate={{y: -40}} transition={{type: 'spring', duration: 1, bounce: 0.3}}>
       <div className="absolute">
         <Dot />
       </div>
@@ -21,7 +22,7 @@ const Healthcare = () => {
       <div className=" w-2/3 h-80">
         <img src={trafalgarImg} alt="trafalgarImg" />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

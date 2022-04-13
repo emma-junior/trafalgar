@@ -9,7 +9,7 @@ import Services from "./components/Services";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Healthcare />
       <Services />

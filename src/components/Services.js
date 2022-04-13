@@ -7,11 +7,32 @@ import consultation from '../images/phone.svg'
 import detailsInfo from '../images/detailsInfo.svg'
 import emergencyCare from '../images/emergency.svg'
 import tracking from '../images/tracking.svg'
-
+import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import { useAnimation } from 'framer-motion';
 
 const Services = () => {
+  const {ref, inView} = useInView({
+    threshold: 0.2
+  })
+  const animation = useAnimation()
+
+  useEffect(() => {
+    if(inView){
+      animation.start({
+        x: 0,
+        transition: { type: "spring", duration: 2, bounce: 0.3}
+      })
+    }
+    if(!inView){
+      animation.start({
+        x: '-100vw'
+      })
+    }
+  },[inView])
   return (
-    <div className="mt-52 relative">
+    <div ref={ref} className="mt-52 relative">
       <div className="text-center">
         <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
@@ -26,10 +47,13 @@ const Services = () => {
         <img className="" src={vector} alt="vector" />
       </div>
       <div className="mx-32 mb-20 relative">
-        <div className='absolute right-0 top-40 -z-20'>
+        <div className="absolute right-0 top-40 -z-20">
           <Dots />
         </div>
-        <div className="grid grid-cols-3 gap-5">
+        <motion.div
+          className="grid grid-cols-3 gap-5"
+          animate={animation}
+        >
           <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
             <img
               className="w-16 h-16 my-4"
@@ -97,7 +121,7 @@ const Services = () => {
               Track and save your medical history and health data
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <button className=" mx-[500px] text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
         Learn more
