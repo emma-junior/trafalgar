@@ -3,8 +3,8 @@ import downloadAppimg from '../images/trafalgar-third-img.svg'
 
 const DownloadApp = () => {
   return (
-    <div className="flex">
-      <div className="w-1/3 m-24">
+    <div className="lg:flex">
+      <div className="lg:w-1/3 lg:m-24 m-8">
         <h2 className="font-bold mt-10">Download our mobile apps</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10"></div>
         <p className="text-[#666]">
@@ -16,7 +16,7 @@ const DownloadApp = () => {
           Download
         </button>
       </div>
-      <div className="w-2/3">
+      <div className="lg:w-2/3 m-6 lg:m-1">
         <img src={downloadAppimg} alt="downloadAppimg" />
       </div>
     </div>

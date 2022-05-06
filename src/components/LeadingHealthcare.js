@@ -3,12 +3,14 @@ import trafalgarPic from '../images/trafalgar-secondimg.svg'
 
 const LeadingHealthcare = () => {
   return (
-    <div className="m-24 flex">
-      <div className="w-1/2 mr-8">
+    <div className="lg:m-24 mt-12 lg:flex block">
+      <div className="lg:w-1/2 w-4/5 mx-auto lg:mr-8">
         <img src={trafalgarPic} alt="trafalgarPic" />
       </div>
-      <div className="w-1/2 mt-12">
-        <h2 className="font-bold">Leading healthcare Providers</h2>
+      <div className="lg:w-1/2 m-8 lg:m-1 lg:mt-12 mt-7">
+        <h2 className="lg:text-4xl text-3xl font-bold mb-7">
+          Leading healthcare Providers
+        </h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10"></div>
         <p className="text-[#666]">
           Trafalgar provides progressive and affordable healthcare, accessible

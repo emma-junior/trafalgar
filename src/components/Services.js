@@ -30,9 +30,9 @@ const Services = () => {
         x: '-100vw'
       })
     }
-  },[inView])
+  },[inView, animation])
   return (
-    <div ref={ref} className="mt-52 relative">
+    <div ref={ref} className="lg:mt-52 md:mt-64 relative">
       <div className="text-center">
         <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
@@ -46,12 +46,12 @@ const Services = () => {
       <div className="absolute top-44 w-[600px] h-[300px] -z-20">
         <img className="" src={vector} alt="vector" />
       </div>
-      <div className="mx-32 mb-20 relative">
+      <div className="lg:mx-32 lg:mb-20 relative">
         <div className="absolute right-0 top-40 -z-20">
           <Dots />
         </div>
         <motion.div
-          className="grid grid-cols-3 gap-5"
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 ml-16"
           animate={animation}
         >
           <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
@@ -123,7 +123,7 @@ const Services = () => {
           </div>
         </motion.div>
       </div>
-      <button className=" mx-[500px] text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
+      <button className=" lg:mx-[550px] md:ml-80 mx-28 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 ">
         Learn more
       </button>
     </div>

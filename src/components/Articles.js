@@ -26,17 +26,20 @@ const Articles = () => {
         x: '-100vw',
       });
     }
-  }, [inView]);
+  }, [inView, animation]);
 
   return (
-    <div ref={ref} className="mt-40 relative">
+    <div ref={ref} className="lg:mt-40 mt-20 relative">
       <h2 className="font-bold text-center">Check out our latest article</h2>
       <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
-      <div className='absolute right-0 -z-20 '>
-        <img className='h-[400px] w-[550px] ' src={vectorTwo} alt='vectorTwo' />
+      <div className="absolute right-0 -z-20 ">
+        <img className="h-[400px] w-[550px] " src={vectorTwo} alt="vectorTwo" />
       </div>
-      <motion.div className="mx-44 my-16 flex" animate={animation}>
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8">
+      <motion.div
+        className="lg:mx-44 mx-16 lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
+        animate={animation}
+      >
+        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
           <img
             className="rounded-lg h-44 mt-0"
             src={articleOne}
@@ -53,7 +56,7 @@ const Articles = () => {
             <button className="text-[#4089ED]">Read more</button>
           </div>
         </div>
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8">
+        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
           <img
             className="rounded-lg h-44 mt-0"
             src={articleTwo}
@@ -70,7 +73,7 @@ const Articles = () => {
             <button className="text-[#4089ED]">Read more</button>
           </div>
         </div>
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50">
+        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mb-4">
           <img
             className="rounded-lg h-44 mt-0"
             src={articleThree}
@@ -86,7 +89,7 @@ const Articles = () => {
           </div>
         </div>
       </motion.div>
-      <button className=" mx-[550px] text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-28 ">
+      <button className=" lg:mx-[550px] md:mx-[300px] mx-[120px] text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 ">
         View all
       </button>
     </div>
