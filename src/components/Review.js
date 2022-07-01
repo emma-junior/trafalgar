@@ -10,7 +10,7 @@ import arrowRight from "../images/arrowRight.svg";
 const Review = () => {
   return (
     <div>
-      <div class="bg-gradient-to-b from-blue-400 via-blue-400 to-blue-500 rounded-lg lg:mt-40 mt-20 lg:w-[70%] w-[90%] flex mx-auto text-white  relative">
+      <div class="bg-gradient-to-b from-blue-400 via-blue-400 to-blue-500 rounded-lg lg:mt-40 mt-20 lg:w-[70%] w-[90%] flex justify-center mx-auto text-white  relative">
         <div className="absolute right-0 top-1">
           <Dot />
         </div>

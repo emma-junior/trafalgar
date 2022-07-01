@@ -3,7 +3,7 @@ import downloadAppimg from "../images/trafalgar-third-img.svg";
 
 const DownloadApp = () => {
   return (
-    <div className="lg:flex w-[90%] mx-auto">
+    <div className="lg:flex w-[90%] mx-auto justify-center">
       <div className="lg:w-1/3 w-4/5 mx-auto lg:m-24 mr-8">
         <h2 className="lg:text-3xl text-2xl font-bold mt-10">
           Download our mobile apps

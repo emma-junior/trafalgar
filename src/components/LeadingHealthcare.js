@@ -3,7 +3,7 @@ import trafalgarPic from "../images/trafalgar-secondimg.svg";
 
 const LeadingHealthcare = () => {
   return (
-    <div className="lg:my-24 my-5 w-[90%] mx-auto lg:flex block">
+    <div className="lg:my-24 my-5 w-[90%] justify-center mx-auto lg:flex block">
       <div className="lg:w-1/2 w-4/5 mx-auto lg:mr-8">
         <img src={trafalgarPic} alt="trafalgarPic" />
       </div>
