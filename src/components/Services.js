@@ -1,36 +1,36 @@
-import React from 'react'
-import {Dots} from "./Dots";
-import vector from '../images/Vector.svg'
-import searchDoctor from '../images/Frame.svg'
-import onlinePharm from '../images/drug.svg'
-import consultation from '../images/phone.svg'
-import detailsInfo from '../images/detailsInfo.svg'
-import emergencyCare from '../images/emergency.svg'
-import tracking from '../images/tracking.svg'
+import React from "react";
+import { Dots } from "./Dots";
+import vector from "../images/Vector.svg";
+import searchDoctor from "../images/Frame.svg";
+import onlinePharm from "../images/drug.svg";
+import consultation from "../images/phone.svg";
+import detailsInfo from "../images/detailsInfo.svg";
+import emergencyCare from "../images/emergency.svg";
+import tracking from "../images/tracking.svg";
 import { motion } from "framer-motion";
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import { useAnimation } from 'framer-motion';
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
 
 const Services = () => {
-  const {ref, inView} = useInView({
-    threshold: 0.2
-  })
-  const animation = useAnimation()
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+  const animation = useAnimation();
 
   useEffect(() => {
-    if(inView){
+    if (inView) {
       animation.start({
         x: 0,
-        transition: { type: "spring", duration: 2, bounce: 0.3}
-      })
+        transition: { type: "spring", duration: 2, bounce: 0.3 },
+      });
     }
-    if(!inView){
+    if (!inView) {
       animation.start({
-        x: '-100vw'
-      })
+        x: "-100vw",
+      });
     }
-  },[inView, animation])
+  }, [inView, animation]);
   return (
     <div ref={ref} className="lg:mt-52 md:mt-64 relative">
       <div className="text-center">
@@ -51,7 +51,7 @@ const Services = () => {
           <Dots />
         </div>
         <motion.div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 ml-16"
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 w-[80%] justify-center mx-auto "
           animate={animation}
         >
           <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
@@ -123,11 +123,13 @@ const Services = () => {
           </div>
         </motion.div>
       </div>
-      <button className=" lg:mx-[550px] md:ml-80 mx-28 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 ">
-        Learn more
-      </button>
+      <div className="flex w-[100%] justify-center">
+        <button className="text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 ">
+          Learn more
+        </button>
+      </div>
     </div>
   );
-}
+};
 
-export default Services
+export default Services;

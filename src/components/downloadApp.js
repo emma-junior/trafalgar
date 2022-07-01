@@ -1,11 +1,13 @@
-import React from 'react'
-import downloadAppimg from '../images/trafalgar-third-img.svg'
+import React from "react";
+import downloadAppimg from "../images/trafalgar-third-img.svg";
 
 const DownloadApp = () => {
   return (
-    <div className="lg:flex">
-      <div className="lg:w-1/3 lg:m-24 m-8">
-        <h2 className="font-bold mt-10">Download our mobile apps</h2>
+    <div className="lg:flex w-[90%] mx-auto">
+      <div className="lg:w-1/3 w-4/5 mx-auto lg:m-24 mr-8">
+        <h2 className="lg:text-3xl text-2xl font-bold mt-10">
+          Download our mobile apps
+        </h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10"></div>
         <p className="text-[#666]">
           Our dedicated patient engagement app and web portal allow you to
@@ -16,11 +18,11 @@ const DownloadApp = () => {
           Download
         </button>
       </div>
-      <div className="lg:w-2/3 m-6 lg:m-1">
+      <div className="lg:w-2/3 ">
         <img src={downloadAppimg} alt="downloadAppimg" />
       </div>
     </div>
   );
-}
+};
 
-export default DownloadApp
+export default DownloadApp;

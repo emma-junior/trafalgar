@@ -1,8 +1,8 @@
-import React from 'react'
-import vectorTwo from '../images/Vector-two.svg'
-import articleOne from '../images/article-one.jpg'
-import articleTwo from '../images/article-two.jpg'
-import articleThree from '../images/article-three.jpg'
+import React from "react";
+import vectorTwo from "../images/Vector-two.svg";
+import articleOne from "../images/article-one.jpg";
+import articleTwo from "../images/article-two.jpg";
+import articleThree from "../images/article-three.jpg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -23,7 +23,7 @@ const Articles = () => {
     }
     if (!inView) {
       animation.start({
-        x: '-100vw',
+        x: "-100vw",
       });
     }
   }, [inView, animation]);
@@ -36,7 +36,7 @@ const Articles = () => {
         <img className="h-[400px] w-[550px] " src={vectorTwo} alt="vectorTwo" />
       </div>
       <motion.div
-        className="lg:mx-44 mx-16 lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
+        className="lg:w-[80%] justify-center w-[70%] mx-auto lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
         animate={animation}
       >
         <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
@@ -89,11 +89,13 @@ const Articles = () => {
           </div>
         </div>
       </motion.div>
-      <button className=" lg:mx-[550px] md:mx-[300px] mx-[120px] text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 ">
-        View all
-      </button>
+      <div className="flex w-[100%] justify-center">
+        <button className="mx-auto text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 ">
+          View all
+        </button>
+      </div>
     </div>
   );
-}
+};
 
-export default Articles
+export default Articles;

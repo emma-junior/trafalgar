@@ -1,9 +1,9 @@
-import React from 'react'
-import trafalgarPic from '../images/trafalgar-secondimg.svg'
+import React from "react";
+import trafalgarPic from "../images/trafalgar-secondimg.svg";
 
 const LeadingHealthcare = () => {
   return (
-    <div className="lg:m-24 mt-12 lg:flex block">
+    <div className="lg:my-24 my-5 w-[90%] mx-auto lg:flex block">
       <div className="lg:w-1/2 w-4/5 mx-auto lg:mr-8">
         <img src={trafalgarPic} alt="trafalgarPic" />
       </div>
@@ -17,12 +17,12 @@ const LeadingHealthcare = () => {
           on mobile and online for everyone. To us is not just work. We take
           pride in the solutions we deliver
         </p>
-        <button className=" my-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
+        <button className=" mt-5 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
           Learn more
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default LeadingHealthcare
+export default LeadingHealthcare;
