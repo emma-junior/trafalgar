@@ -16,7 +16,25 @@ const Services = () => {
   const { ref, inView } = useInView({
     threshold: 0.2,
   });
+
   const animation = useAnimation();
+  const topic = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      topic.start({
+        y: -20,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+    if (!inView) {
+      topic.start({
+        y: 0,
+        opacity: 0,
+      });
+    }
+  }, [inView, topic]);
 
   useEffect(() => {
     if (inView) {
@@ -32,9 +50,11 @@ const Services = () => {
     }
   }, [inView, animation]);
   return (
-    <div ref={ref} className="lg:mt-52 md:mt-64 relative">
+    <div ref={ref} className="md:mt-64 relative">
       <div className="text-center">
-        <h2 className="font-bold text-[36px]">Our services</h2>
+        <motion.h2 animate={topic} className="font-bold text-[36px]">
+          Our services
+        </motion.h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
         <p className="text-[#666] w-2/3 mx-auto my-10">
           We provide to you the best choices for you. Adjust it to your health
@@ -51,7 +71,7 @@ const Services = () => {
           <Dots />
         </div>
         <motion.div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 w-[80%] justify-center mx-auto "
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 w-[80%] mx-auto "
           animate={animation}
         >
           <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">

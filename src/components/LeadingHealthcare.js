@@ -1,13 +1,58 @@
 import React from "react";
 import trafalgarPic from "../images/trafalgar-secondimg.svg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
 
 const LeadingHealthcare = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+  const animation = useAnimation();
+  const content = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        y: -30,
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
+
+  useEffect(() => {
+    if (inView) {
+      content.start({
+        y: -20,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+    if (!inView) {
+      content.start({
+        y: 0,
+        opacity: 0,
+      });
+    }
+  }, [inView, content]);
   return (
-    <div className="lg:my-24 my-5 w-[90%] justify-center mx-auto lg:flex block">
-      <div className="lg:w-1/2 w-4/5 mx-auto lg:mr-8">
+    <div
+      ref={ref}
+      className="lg:my-24 my-8 w-[90%] justify-between mx-auto lg:flex block"
+    >
+      <motion.div animate={animation} className="lg:w-2/5 w-4/5 mx-auto">
         <img src={trafalgarPic} alt="trafalgarPic" />
-      </div>
-      <div className="lg:w-1/2 m-8 lg:m-1 lg:mt-12 mt-7">
+      </motion.div>
+      <motion.div
+        animate={content}
+        className="lg:w-2/5 m-8 lg:m-1 lg:mt-12 mt-7"
+      >
         <h2 className="lg:text-4xl text-3xl font-bold mb-7">
           Leading healthcare Providers
         </h2>
@@ -20,7 +65,7 @@ const LeadingHealthcare = () => {
         <button className=" mt-5 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
           Learn more
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };

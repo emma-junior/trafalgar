@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 const Healthcare = () => {
   return (
     <motion.div
-      className="lg:flex w-[90%] justify-center mx-auto block mt-24"
+      className="lg:flex w-[90%] justify-between mx-auto mt-24"
       animate={{ y: -40 }}
       transition={{ type: "spring", duration: 1, bounce: 0.3 }}
     >
       <div className="absolute">
         <Dot />
       </div>
-      <div className="lg:w-1/3 lg:mr-8 lg:mt-40 mt-10">
+      <div className="lg:w-5/12 lg:mt-40 mt-10">
         <h2 className="lg:text-4xl text-3xl font-bold mb-7">
           Virtual Healthcare for you
         </h2>
@@ -25,7 +25,7 @@ const Healthcare = () => {
           Consult today
         </button>
       </div>
-      <div className=" lg:w-2/3 h-80 w-10/12 mx-auto">
+      <div className=" lg:w-7/12 h-80 w-10/12">
         <img src={trafalgarImg} alt="trafalgarImg" />
       </div>
     </motion.div>

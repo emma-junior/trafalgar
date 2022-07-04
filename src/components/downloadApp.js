@@ -1,10 +1,52 @@
 import React from "react";
 import downloadAppimg from "../images/trafalgar-third-img.svg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
 
 const DownloadApp = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+  const animation = useAnimation();
+  const content = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        y: -30,
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
+    }
+    if (!inView) {
+      animation.start({
+        y: 0,
+      });
+    }
+  }, [inView, animation]);
+
+  useEffect(() => {
+    if (inView) {
+      content.start({
+        y: -20,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+    if (!inView) {
+      content.start({
+        y: 0,
+        opacity: 0,
+      });
+    }
+  }, [inView, content]);
   return (
-    <div className="lg:flex w-[90%] mx-auto justify-center">
-      <div className="lg:w-1/3 w-4/5 mx-auto lg:m-24 mr-8">
+    <div
+      ref={ref}
+      className="lg:flex lg:w-[80%] w-[90%] mx-auto justify-between"
+    >
+      <motion.div className="lg:w-5/12 w-4/5 mx-auto lg:mx-1" animate={content}>
         <h2 className="lg:text-3xl text-2xl font-bold mt-10">
           Download our mobile apps
         </h2>
@@ -14,13 +56,13 @@ const DownloadApp = () => {
           access information instantaneously [no tedeous form, long calls, or
           administrative hassle] and securely
         </p>
-        <button className=" my-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
+        <button className="my-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
           Download
         </button>
-      </div>
-      <div className="lg:w-2/3 ">
+      </motion.div>
+      <motion.div className="lg:w-6/12" animate={animation}>
         <img src={downloadAppimg} alt="downloadAppimg" />
-      </div>
+      </motion.div>
     </div>
   );
 };

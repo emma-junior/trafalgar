@@ -47,12 +47,16 @@ const Review = () => {
         </div>
       </div>
       <div class="flex w-[100%] justify-center my-6">
-        <img className="" src={arrowLeft} alt="arrowleft" />
+        <img className="pt-1 cursor-pointer" src={arrowLeft} alt="arrowleft" />
         <span class="w-2 h-2 text-blue-300 font-black pl-8 px-1">•</span>
         <span class="w-2 h-2 text-blue-400 font-black px-1">•</span>
         <span class="w-2 h-2 text-blue-300 font-black px-1">•</span>
         <span class="w-2 h-2 text-blue-300 font-black px-1 pr-8">•</span>
-        <img className="" src={arrowRight} alt="arrowRight" />
+        <img
+          className="pt-1 cursor-pointer"
+          src={arrowRight}
+          alt="arrowRight"
+        />
       </div>
     </div>
   );

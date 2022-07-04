@@ -13,6 +13,23 @@ const Articles = () => {
     threshold: 0.2,
   });
   const animation = useAnimation();
+  const topic = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      topic.start({
+        y: -20,
+        opacity: 1,
+        transition: { duration: 1 },
+      });
+    }
+    if (!inView) {
+      topic.start({
+        y: 0,
+        opacity: 0,
+      });
+    }
+  }, [inView, topic]);
 
   useEffect(() => {
     if (inView) {
@@ -30,7 +47,9 @@ const Articles = () => {
 
   return (
     <div ref={ref} className="lg:mt-40 mt-20 relative">
-      <h2 className="font-bold text-center">Check out our latest article</h2>
+      <motion.h2 className="font-bold text-center text-2xl" animate={topic}>
+        Check out our latest article
+      </motion.h2>
       <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
       <div className="absolute right-0 -z-20 ">
         <img className="h-[400px] w-[550px] " src={vectorTwo} alt="vectorTwo" />
