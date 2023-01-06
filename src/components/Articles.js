@@ -50,7 +50,10 @@ const Articles = () => {
       <motion.h2 className="font-bold text-center text-2xl" animate={topic}>
         Check out our latest article
       </motion.h2>
-      <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
+      <motion.div
+        animate={topic}
+        className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"
+      ></motion.div>
       <div className="absolute right-0 -z-20 ">
         <img className="h-[400px] w-[550px] " src={vectorTwo} alt="vectorTwo" />
       </div>
@@ -109,9 +112,12 @@ const Articles = () => {
         </div>
       </motion.div>
       <div className="flex w-[100%] justify-center">
-        <button className="mx-auto text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 ">
+        <motion.button
+          animate={animation}
+          className="mx-auto text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 "
+        >
           View all
-        </button>
+        </motion.button>
       </div>
     </div>
   );

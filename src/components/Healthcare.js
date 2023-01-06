@@ -21,11 +21,11 @@ const Healthcare = () => {
           Trafalgar provides progressive, and affordable Healthcare, accessible
           on mobile and online for everyone.
         </p>
-        <button className="bg-[#458FF6] py-2 px-8 rounded-full text-white">
+        <button className="bg-[#458FF6] py-2 px-8 rounded-full text-white mb-7">
           Consult today
         </button>
       </div>
-      <div className=" lg:w-7/12 h-80 w-10/12">
+      <div className=" lg:w-6/12 h-80 w-11/12">
         <img src={trafalgarImg} alt="trafalgarImg" />
       </div>
     </motion.div>

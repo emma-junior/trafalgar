@@ -46,7 +46,7 @@ const LeadingHealthcare = () => {
       ref={ref}
       className="lg:my-24 my-8 w-[90%] justify-between mx-auto lg:flex block"
     >
-      <motion.div animate={animation} className="lg:w-2/5 w-4/5 mx-auto">
+      <motion.div animate={animation} className="lg:w-2/5 w-5/5 mx-auto">
         <img src={trafalgarPic} alt="trafalgarPic" />
       </motion.div>
       <motion.div
@@ -62,7 +62,7 @@ const LeadingHealthcare = () => {
           on mobile and online for everyone. To us is not just work. We take
           pride in the solutions we deliver
         </p>
-        <button className=" mt-5 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
+        <button className=" mt-5 mb-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
           Learn more
         </button>
       </motion.div>

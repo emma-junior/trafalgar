@@ -51,10 +51,8 @@ const Services = () => {
   }, [inView, animation]);
   return (
     <div ref={ref} className="md:mt-64 relative">
-      <div className="text-center">
-        <motion.h2 animate={topic} className="font-bold text-[36px]">
-          Our services
-        </motion.h2>
+      <motion.div animate={topic} className="text-center">
+        <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
         <p className="text-[#666] w-2/3 mx-auto my-10">
           We provide to you the best choices for you. Adjust it to your health
@@ -62,16 +60,16 @@ const Services = () => {
           doctors you can consult with us which type of services is suitable for
           your health
         </p>
-      </div>
+      </motion.div>
       <div className="absolute top-44 w-[600px] h-[300px] -z-20">
         <img className="" src={vector} alt="vector" />
       </div>
-      <div className="lg:mx-32 lg:mb-20 relative">
+      <div className=" lg:mb-20 relative mx-auto">
         <div className="absolute right-0 top-40 -z-20">
           <Dots />
         </div>
         <motion.div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 w-[80%] mx-auto "
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] w-full justify-center mx-auto "
           animate={animation}
         >
           <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
@@ -144,9 +142,12 @@ const Services = () => {
         </motion.div>
       </div>
       <div className="flex w-[100%] justify-center">
-        <button className="text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 ">
+        <motion.button
+          animate={animation}
+          className="text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 mb-16 "
+        >
           Learn more
-        </button>
+        </motion.button>
       </div>
     </div>
   );
