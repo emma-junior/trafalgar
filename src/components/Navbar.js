@@ -24,26 +24,36 @@ const Navbar = () => {
             </h2>
             {toggleMenu && (
               <ul className="absolute z-10 right-8 bg-[#458FF6] p-4 text-lg text-white shadow-lg shadow-black-500/50">
-                <li className="cursor-pointer pt-1 ">Home</li>
-                <li className="cursor-pointer pt-1 ">Find a doctor</li>
-                <li className="cursor-pointer pt-1 ">Apps</li>
-                <li className="cursor-pointer pt-1 ">Testimonials</li>
-                <li className="cursor-pointer pt-1 ">About us</li>
+                <li className="cursor-pointer ">Home</li>
+                <li className="cursor-pointer">Find a doctor</li>
+                <li className="cursor-pointer">Apps</li>
+                <li className="cursor-pointer">Testimonials</li>
+                <li className="cursor-pointer">About us</li>
               </ul>
             )}
           </div>
         </div>
         <motion.div
-          className="p-3 lg:flex hidden space-x-3 w-full justify-end"
+          className="p-3 lg:flex hidden space-x-5 w-full justify-end"
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", duration: 1, bounce: 0.3 }}
         >
-          <button className="text-[#1F1534] ">Home</button>
-          <button className="text-[#666]">Find a doctor</button>
-          <button className="text-[#666]">Apps</button>
-          <button className="text-[#666]">Testimonials</button>
-          <button className="text-[#666]">About us</button>
+          <button className="text-[#1F1534] pb-2 hover:border-b-2 border-[#666] ">
+            Home
+          </button>
+          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
+            Find a doctor
+          </button>
+          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
+            Apps
+          </button>
+          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
+            Testimonials
+          </button>
+          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
+            About us
+          </button>
         </motion.div>
       </section>
     </nav>

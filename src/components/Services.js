@@ -49,6 +49,51 @@ const Services = () => {
       });
     }
   }, [inView, animation]);
+
+  const services = [
+    {
+      id: 1,
+      icon: searchDoctor,
+      title: "Search Doctor",
+      content:
+        "Choose your doctor from thousands of specialist, general, and trusted hospitals",
+    },
+    {
+      id: 2,
+      icon: onlinePharm,
+      title: "Online Pharmacy",
+      content:
+        "Buy your medicines with our mobile application with a simple delivery system",
+    },
+    {
+      id: 3,
+      icon: consultation,
+      title: "Consultation",
+      content:
+        "Free consultation with our trusted doctors and get the best recommendations",
+    },
+    {
+      id: 4,
+      icon: detailsInfo,
+      title: "Details info",
+      content:
+        "Free consultation with our trusted doctors and get the best recommendations",
+    },
+    {
+      id: 5,
+      icon: emergencyCare,
+      title: "Emergency care",
+      content:
+        "You can get 24/7 urgent care for yourself or your children and your lovely family",
+    },
+    {
+      id: 6,
+      icon: tracking,
+      title: "Tracking",
+      content: "Track and save your medical history and health data",
+    },
+  ];
+
   return (
     <div ref={ref} className="md:mt-64 relative">
       <motion.div animate={topic} className="text-center">
@@ -72,73 +117,19 @@ const Services = () => {
           className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] w-full justify-center mx-auto "
           animate={animation}
         >
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img
-              className="w-16 h-16 my-4"
-              src={searchDoctor}
-              alt="searchDoctor"
-            />
-            <h2 className="font-bold mb-3">Search Doctor</h2>
-            <p className="text-[#666] text-sm">
-              Choose your doctor from thousands of specialist, general, and
-              trusted hospitals
-            </p>
-          </div>
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img
-              className="w-16 h-16 my-4"
-              src={onlinePharm}
-              alt="onlinePharm"
-            />
-            <h2 className="font-bold mb-3">Online Pharmacy</h2>
-            <p className="text-[#666] text-sm">
-              Buy your medicines with our mobile application with a simple
-              delivery system
-            </p>
-          </div>
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img
-              className="w-16 h-16 my-4"
-              src={consultation}
-              alt="consultation"
-            />
-            <h2 className="font-bold mb-3">Consultation</h2>
-            <p className="text-[#666] text-sm">
-              Free consultation with our trusted doctors and get the best
-              recommendations
-            </p>
-          </div>
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img
-              className="w-16 h-16 my-4"
-              src={detailsInfo}
-              alt="detailsInfo"
-            />
-            <h2 className="font-bold mb-3">Details info</h2>
-            <p className="text-[#666] text-sm">
-              Free consultation with our trusted doctors and get the best
-              recommendations
-            </p>
-          </div>
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img
-              className="w-16 h-16 my-4"
-              src={emergencyCare}
-              alt="detailsInfo"
-            />
-            <h2 className="font-bold mb-3">Emergency care</h2>
-            <p className="text-[#666] text-sm">
-              You can get 24/7 urgent care for yourself or your children and
-              your lovely family
-            </p>
-          </div>
-          <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
-            <img className="w-16 h-16 my-4" src={tracking} alt="tracking" />
-            <h2 className="font-bold mb-3">Tracking</h2>
-            <p className="text-[#666] text-sm">
-              Track and save your medical history and health data
-            </p>
-          </div>
+          {services.map((service) => {
+            return (
+              <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
+                <img
+                  className="w-16 h-16 my-4"
+                  src={service.icon}
+                  alt="searchDoctor"
+                />
+                <h2 className="font-bold mb-3">{service.title}</h2>
+                <p className="text-[#666] text-sm">{service.content}</p>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
       <div className="flex w-[100%] justify-center">
