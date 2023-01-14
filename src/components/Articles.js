@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
+import Button from "./Button";
 
 const Articles = () => {
   const { ref, inView } = useInView({
@@ -112,12 +113,9 @@ const Articles = () => {
         </div>
       </motion.div>
       <div className="flex w-[100%] justify-center">
-        <motion.button
-          animate={animation}
-          className="mx-auto text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mb-20 lg:mb-28 "
-        >
-          View all
-        </motion.button>
+        <motion.div animate={animation} className="mx-auto mb-20 lg:mb-28">
+          <Button text="View all" />
+        </motion.div>
       </div>
     </div>
   );

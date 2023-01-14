@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
+import Button from "./Button";
 
 const Services = () => {
   const { ref, inView } = useInView({
@@ -133,12 +134,9 @@ const Services = () => {
         </motion.div>
       </div>
       <div className="flex w-[100%] justify-center">
-        <motion.button
-          animate={animation}
-          className="text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full mt-6 lg:mt-2 mb-16 "
-        >
-          Learn more
-        </motion.button>
+        <motion.div animate={animation} className="mt-6 lg:mt-2 mb-16">
+          <Button text="Learn more" />
+        </motion.div>
       </div>
     </div>
   );

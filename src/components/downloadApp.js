@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
+import Button from "./Button";
 
 const DownloadApp = () => {
   const { ref, inView } = useInView({
@@ -56,9 +57,9 @@ const DownloadApp = () => {
           access information instantaneously [no tedeous form, long calls, or
           administrative hassle] and securely
         </p>
-        <button className="my-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
-          Download
-        </button>
+        <div className="my-7">
+          <Button text="Download" />
+        </div>
       </motion.div>
       <motion.div className="lg:w-6/12" animate={animation}>
         <img src={downloadAppimg} alt="downloadAppimg" />

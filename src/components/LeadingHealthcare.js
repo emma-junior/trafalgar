@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { useAnimation } from "framer-motion";
+import Button from "./Button";
 
 const LeadingHealthcare = () => {
   const { ref, inView } = useInView({
@@ -62,9 +63,9 @@ const LeadingHealthcare = () => {
           on mobile and online for everyone. To us is not just work. We take
           pride in the solutions we deliver
         </p>
-        <button className=" mt-5 mb-7 text-[#458FF6] border-2 border-[#458FF6] py-2 px-8 rounded-full ">
-          Learn more
-        </button>
+        <div className="mt-5 mb-7">
+          <Button text="Learn more" />
+        </div>
       </motion.div>
     </div>
   );
