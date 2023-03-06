@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Healthcare = () => {
   return (
     <motion.div
-      className="lg:flex w-[90%] justify-between mx-auto mt-24"
+      className="lg:flex lg:w-[80%] w-[90%] justify-between mx-auto mt-24"
       animate={{ y: -40 }}
       transition={{ type: "spring", duration: 1, bounce: 0.3 }}
     >

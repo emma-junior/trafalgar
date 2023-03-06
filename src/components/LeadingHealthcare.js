@@ -45,7 +45,7 @@ const LeadingHealthcare = () => {
   return (
     <div
       ref={ref}
-      className="lg:my-24 my-8 w-[90%] justify-between mx-auto lg:flex block"
+      className="lg:my-24 my-8 lg:w-[85%] w-[90%] justify-between mx-auto lg:flex block"
     >
       <motion.div animate={animation} className="lg:w-2/5 w-5/5 mx-auto">
         <img src={trafalgarPic} alt="trafalgarPic" />

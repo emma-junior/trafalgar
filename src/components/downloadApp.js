@@ -45,9 +45,9 @@ const DownloadApp = () => {
   return (
     <div
       ref={ref}
-      className="lg:flex lg:w-[80%] w-[90%] mx-auto justify-between"
+      className="lg:flex lg:w-[70%] w-[90%] mx-auto justify-between"
     >
-      <motion.div className="lg:w-5/12 w-4/5 mx-auto lg:mx-1" animate={content}>
+      <motion.div className="lg:w-4/12 w-4/5 mx-auto lg:mx-1" animate={content}>
         <h2 className="lg:text-3xl text-2xl font-bold mt-10">
           Download our mobile apps
         </h2>
