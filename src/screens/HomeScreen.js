@@ -9,7 +9,9 @@ const HomeScreen = () => {
       <div className="container mx-auto px-4">
         <div className="xl:px-32">
           <div className="text-center my-10">
-            <h1 className="text-4xl">Figma to React - Pixel perfect</h1>
+            <h1 className="md:text-4xl text-3xl">
+              Figma to React - Pixel perfect
+            </h1>
             <p className="text-xl">
               Click on the figma icon to open the figma file and react page for
               the design
