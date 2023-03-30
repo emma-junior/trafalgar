@@ -8,7 +8,7 @@ import Button from "./Button";
 
 const DownloadApp = () => {
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.1,
   });
   const animation = useAnimation();
   const content = useAnimation();
