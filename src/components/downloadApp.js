@@ -16,13 +16,13 @@ const DownloadApp = () => {
   useEffect(() => {
     if (inView) {
       animation.start({
-        y: -30,
+        y: -20,
         transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
     }
     if (!inView) {
       animation.start({
-        y: 0,
+        y: 10,
       });
     }
   }, [inView, animation]);
@@ -30,14 +30,14 @@ const DownloadApp = () => {
   useEffect(() => {
     if (inView) {
       content.start({
-        y: -20,
+        y: -10,
         opacity: 1,
         transition: { duration: 1 },
       });
     }
     if (!inView) {
       content.start({
-        y: 0,
+        y: 10,
         opacity: 0,
       });
     }

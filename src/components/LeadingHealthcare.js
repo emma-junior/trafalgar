@@ -16,13 +16,13 @@ const LeadingHealthcare = () => {
   useEffect(() => {
     if (inView) {
       animation.start({
-        y: -30,
+        y: -20,
         transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
     }
     if (!inView) {
       animation.start({
-        y: 0,
+        y: 10,
       });
     }
   }, [inView, animation]);
@@ -30,14 +30,14 @@ const LeadingHealthcare = () => {
   useEffect(() => {
     if (inView) {
       content.start({
-        y: -20,
+        y: -10,
         opacity: 1,
         transition: { duration: 1 },
       });
     }
     if (!inView) {
       content.start({
-        y: 0,
+        y: 10,
         opacity: 0,
       });
     }
@@ -45,7 +45,7 @@ const LeadingHealthcare = () => {
   return (
     <div
       ref={ref}
-      className="lg:my-24 my-8 lg:w-[85%] w-[90%] justify-between mx-auto lg:flex block"
+      className="lg:my-24 my-16 lg:w-[85%] w-[90%] justify-between mx-auto lg:flex block"
     >
       <motion.div animate={animation} className="lg:w-2/5 w-5/5 mx-auto">
         <img src={trafalgarPic} alt="trafalgarPic" />
