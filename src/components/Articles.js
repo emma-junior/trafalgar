@@ -4,55 +4,22 @@ import articleOne from "../images/article-one.jpg";
 import articleTwo from "../images/article-two.jpg";
 import articleThree from "../images/article-three.jpg";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
 import Button from "./Button";
+import useAnimate from "../animations";
 
 const Articles = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-  const animation = useAnimation();
-  const topic = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      topic.start({
-        y: -20,
-        opacity: 1,
-        transition: { duration: 1 },
-      });
-    }
-    if (!inView) {
-      topic.start({
-        y: 0,
-        opacity: 0,
-      });
-    }
-  }, [inView, topic]);
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: 0,
-        transition: { type: "spring", duration: 2, bounce: 0.3 },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        x: "-100vw",
-      });
-    }
-  }, [inView, animation]);
+  const { ref, animationx, animationy } = useAnimate();
 
   return (
     <div ref={ref} className="lg:mt-40 mt-20 relative">
-      <motion.h2 className="font-bold text-center text-2xl" animate={topic}>
+      <motion.h2
+        className="font-bold text-center text-2xl"
+        animate={animationy}
+      >
         Check out our latest article
       </motion.h2>
       <motion.div
-        animate={topic}
+        animate={animationy}
         className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"
       ></motion.div>
       <div className="absolute right-0 -z-20 ">
@@ -60,7 +27,7 @@ const Articles = () => {
       </div>
       <motion.div
         className="lg:w-[80%] justify-center w-[70%] mx-auto lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
-        animate={animation}
+        animate={animationx}
       >
         <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
           <img
@@ -113,7 +80,7 @@ const Articles = () => {
         </div>
       </motion.div>
       <div className="flex w-[100%] justify-center">
-        <motion.div animate={animation} className="mx-auto mb-20 lg:mb-28">
+        <motion.div animate={animationx} className="mx-auto mb-20 lg:mb-28">
           <Button text="View all" />
         </motion.div>
       </div>

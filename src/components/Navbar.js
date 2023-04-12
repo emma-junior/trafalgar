@@ -22,7 +22,7 @@ const Navbar = () => {
             >
               <FaBars />
             </h2>
-            {toggleMenu && (
+            {/* {toggleMenu && (
               <ul className="absolute z-10 right-8 bg-[#458FF6] p-4 text-lg text-white shadow-lg shadow-black-500/50">
                 <li className="cursor-pointer ">Home</li>
                 <li className="cursor-pointer">Find a doctor</li>
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <li className="cursor-pointer">Testimonials</li>
                 <li className="cursor-pointer">About us</li>
               </ul>
-            )}
+            )} */}
           </div>
         </div>
         <motion.div

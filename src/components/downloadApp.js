@@ -1,53 +1,20 @@
 import React from "react";
 import downloadAppimg from "../images/trafalgar-third-img.svg";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
 import Button from "./Button";
+import useAnimate from "../animations";
 
 const DownloadApp = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-  const animation = useAnimation();
-  const content = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        y: -20,
-        transition: { type: "spring", duration: 1, bounce: 0.3 },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        y: 10,
-      });
-    }
-  }, [inView, animation]);
-
-  useEffect(() => {
-    if (inView) {
-      content.start({
-        y: -10,
-        opacity: 1,
-        transition: { duration: 1 },
-      });
-    }
-    if (!inView) {
-      content.start({
-        y: 10,
-        opacity: 0,
-      });
-    }
-  }, [inView, content]);
+  const { ref, animationy } = useAnimate();
   return (
     <div
       ref={ref}
       className="lg:flex lg:w-[70%] w-[90%] mx-auto justify-between"
     >
-      <motion.div className="lg:w-4/12 w-4/5 mx-auto lg:mx-1" animate={content}>
+      <motion.div
+        className="lg:w-4/12 w-4/5 mx-auto lg:mx-1"
+        animate={animationy}
+      >
         <h2 className="lg:text-3xl text-2xl font-bold mt-10">
           Download our mobile apps
         </h2>
@@ -61,7 +28,7 @@ const DownloadApp = () => {
           <Button text="Download" />
         </div>
       </motion.div>
-      <motion.div className="lg:w-6/12" animate={animation}>
+      <motion.div className="lg:w-6/12" animate={animationy}>
         <img src={downloadAppimg} alt="downloadAppimg" />
       </motion.div>
     </div>

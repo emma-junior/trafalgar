@@ -8,48 +8,11 @@ import detailsInfo from "../images/detailsInfo.svg";
 import emergencyCare from "../images/emergency.svg";
 import tracking from "../images/tracking.svg";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { useAnimation } from "framer-motion";
 import Button from "./Button";
+import useAnimate from "../animations";
 
 const Services = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-  });
-
-  const animation = useAnimation();
-  const topic = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      topic.start({
-        y: -20,
-        opacity: 1,
-        transition: { duration: 1 },
-      });
-    }
-    if (!inView) {
-      topic.start({
-        y: 0,
-        opacity: 0,
-      });
-    }
-  }, [inView, topic]);
-
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: 0,
-        transition: { type: "spring", duration: 2, bounce: 0.3 },
-      });
-    }
-    if (!inView) {
-      animation.start({
-        x: "-100vw",
-      });
-    }
-  }, [inView, animation]);
+  const { ref, animationx, animationy } = useAnimate();
 
   const services = [
     {
@@ -97,7 +60,7 @@ const Services = () => {
 
   return (
     <div ref={ref} className="md:mt-64 relative">
-      <motion.div animate={topic} className="text-center">
+      <motion.div animate={animationy} className="text-center">
         <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
         <p className="text-[#666] w-2/3 mx-auto my-10">
@@ -116,7 +79,7 @@ const Services = () => {
         </div>
         <motion.div
           className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] w-full justify-center mx-auto "
-          animate={animation}
+          animate={animationx}
         >
           {services.map((service) => {
             return (
@@ -134,7 +97,7 @@ const Services = () => {
         </motion.div>
       </div>
       <div className="flex w-[100%] justify-center">
-        <motion.div animate={animation} className="mt-6 lg:mt-2 mb-16">
+        <motion.div animate={animationx} className="mt-6 lg:mt-2 mb-16">
           <Button text="Learn more" />
         </motion.div>
       </div>
