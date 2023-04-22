@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
+import { navbarLinks } from "../data";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -22,15 +23,6 @@ const Navbar = () => {
             >
               <FaBars />
             </h2>
-            {/* {toggleMenu && (
-              <ul className="absolute z-10 right-8 bg-[#458FF6] p-4 text-lg text-white shadow-lg shadow-black-500/50">
-                <li className="cursor-pointer ">Home</li>
-                <li className="cursor-pointer">Find a doctor</li>
-                <li className="cursor-pointer">Apps</li>
-                <li className="cursor-pointer">Testimonials</li>
-                <li className="cursor-pointer">About us</li>
-              </ul>
-            )} */}
           </div>
         </div>
         <motion.div
@@ -39,21 +31,16 @@ const Navbar = () => {
           animate={{ x: 0 }}
           transition={{ type: "spring", duration: 1, bounce: 0.3 }}
         >
-          <button className="text-[#1F1534] pb-2 hover:border-b-2 border-[#666] ">
-            Home
-          </button>
-          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
-            Find a doctor
-          </button>
-          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
-            Apps
-          </button>
-          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
-            Testimonials
-          </button>
-          <button className="text-[#666] pb-2 hover:border-b-2 border-[#666]">
-            About us
-          </button>
+          {navbarLinks.map((link, index) => {
+            return (
+              <button
+                key={index}
+                className="first:font-bold text-[#1F1534] pb-2 hover:border-b-2 border-[#666] "
+              >
+                {link.name}
+              </button>
+            );
+          })}
         </motion.div>
       </section>
     </nav>

@@ -1,10 +1,8 @@
 import React from "react";
 import vectorTwo from "../images/Vector-two.svg";
-import articleOne from "../images/article-one.jpg";
-import articleTwo from "../images/article-two.jpg";
-import articleThree from "../images/article-three.jpg";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import { articles } from "../data";
 import useAnimate from "../animations";
 
 const Articles = () => {
@@ -29,55 +27,25 @@ const Articles = () => {
         className="lg:w-[80%] justify-center w-[70%] mx-auto lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
         animate={animationx}
       >
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
-          <img
-            className="rounded-lg h-44 mt-0"
-            src={articleOne}
-            alt="articleOne"
-          />
-          <div className="p-4">
-            <h2 className="font-bold">
-              Disease detection, check up in the laboratory
-            </h2>
-            <p className="py-3 text-[#666] text-sm">
-              In this case, the role of the health laboratory is very important
-              to do a disease detection...
-            </p>
-            <button className="text-[#4089ED]">Read more</button>
-          </div>
-        </div>
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4">
-          <img
-            className="rounded-lg h-44 mt-0"
-            src={articleTwo}
-            alt="articleTwo"
-          />
-          <div className="p-4">
-            <h2 className="font-bold">
-              Herbal medicines that are safe for consumption
-            </h2>
-            <p className="py-3 text-[#666] text-sm">
-              Herbal medicines is very widely used at this time because its very
-              good for your health...
-            </p>
-            <button className="text-[#4089ED]">Read more</button>
-          </div>
-        </div>
-        <div className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mb-4">
-          <img
-            className="rounded-lg h-44 mt-0"
-            src={articleThree}
-            alt="articleThree"
-          />
-          <div className="p-4">
-            <h2 className="font-bold">Natural care for healthy facial skin</h2>
-            <p className="py-3 text-[#666] text-sm">
-              A healthy lifestyle should start from now and also for your skin
-              health. There are some...
-            </p>
-            <button className="text-[#4089ED]">Read more</button>
-          </div>
-        </div>
+        {articles.map((article) => {
+          return (
+            <div
+              key={article.id}
+              className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4"
+            >
+              <img
+                className="rounded-lg h-44 mt-0"
+                src={article.img}
+                alt="articleOne"
+              />
+              <div className="p-4">
+                <h2 className="font-bold">{article.topic}</h2>
+                <p className="py-3 text-[#666] text-sm">{article.content}</p>
+                <button className="text-[#4089ED]">Read more</button>
+              </div>
+            </div>
+          );
+        })}
       </motion.div>
       <div className="flex w-[100%] justify-center">
         <motion.div animate={animationx} className="mx-auto mb-20 lg:mb-28">

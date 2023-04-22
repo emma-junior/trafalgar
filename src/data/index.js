@@ -5,6 +5,10 @@ import detailsInfo from "../images/detailsInfo.svg";
 import emergencyCare from "../images/emergency.svg";
 import tracking from "../images/tracking.svg";
 
+import articleOne from "../images/article-one.jpg";
+import articleTwo from "../images/article-two.jpg";
+import articleThree from "../images/article-three.jpg";
+
 export const services = [
   {
     id: 1,
@@ -46,5 +50,52 @@ export const services = [
     icon: tracking,
     title: "Tracking",
     content: "Track and save your medical history and health data",
+  },
+];
+
+export const articles = [
+  {
+    id: 1,
+    img: articleOne,
+    topic: "Disease detection, check up in the laboratory",
+    content:
+      "In this case, the role of the health laboratory is very important to do a disease detection...",
+  },
+  {
+    id: 2,
+    img: articleTwo,
+    topic: "Herbal medicines that are safe for consumption",
+    content:
+      "Herbal medicines is very widely used at this time because its very good for your health...",
+  },
+  {
+    id: 3,
+    img: articleThree,
+    topic: "Natural care for healthy facial skin",
+    content:
+      "A healthy lifestyle should start from now and also for your skin health. There are some...",
+  },
+];
+
+export const navbarLinks = [
+  {
+    name: "Home",
+    address: "#",
+  },
+  {
+    name: "Find a doctor",
+    address: "#",
+  },
+  {
+    name: "Apps",
+    address: "#",
+  },
+  {
+    name: "Testimonials",
+    address: "#",
+  },
+  {
+    name: "About us",
+    address: "#",
   },
 ];
