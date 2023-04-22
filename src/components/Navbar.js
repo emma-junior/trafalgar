@@ -25,7 +25,7 @@ const Navbar = () => {
             </h2>
           </div>
         </div>
-        <motion.div
+        <motion.ul
           className="p-3 lg:flex hidden space-x-5 w-full justify-end"
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
@@ -33,15 +33,12 @@ const Navbar = () => {
         >
           {navbarLinks.map((link, index) => {
             return (
-              <button
-                key={index}
-                className="first:font-bold text-[#1F1534] pb-2 hover:border-b-2 border-[#666] "
-              >
+              <li key={index} className="nav">
                 {link.name}
-              </button>
+              </li>
             );
           })}
-        </motion.div>
+        </motion.ul>
       </section>
     </nav>
   );

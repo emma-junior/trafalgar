@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .nav {
+        @apply relative ml-10 text-[#1F1534] first:font-bold tracking-[1px] cursor-pointer
+    }
+    .nav::after {
+        @apply content-[''] bg-[#1F1534] h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300
+    }
+    .nav:hover::after {
+        @apply w-[100%] 
+    }
+}
