@@ -10,7 +10,7 @@ const Services = () => {
   const { ref, animationx, animationy } = useAnimate();
 
   return (
-    <div ref={ref} className="md:mt-64 relative">
+    <div ref={ref} className="md:mt-64 lg:mt-24 relative">
       <motion.div animate={animationy} className="text-center">
         <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
@@ -21,15 +21,15 @@ const Services = () => {
           your health
         </p>
       </motion.div>
-      <div className="absolute top-44 w-[600px] h-[300px] -z-20">
+      <div className="absolute top-44 w-[600px] lg:w-[40%] h-[300px] -z-20">
         <img className="" src={vector} alt="vector" />
       </div>
       <div className=" lg:mb-20 relative mx-auto">
-        <div className="absolute right-0 top-40 -z-20">
+        <div className="absolute right-0 lg:right-[12%] top-40 -z-20">
           <Dots />
         </div>
         <motion.div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] w-full justify-center mx-auto "
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] lg:w-[75%] w-full justify-center mx-auto "
           animate={animationx}
         >
           {services.map((service) => {

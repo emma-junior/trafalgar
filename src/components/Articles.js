@@ -1,5 +1,6 @@
 import React from "react";
 import vectorTwo from "../images/Vector-two.svg";
+import articleArrow from "../images/articleArrow.svg";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { articles } from "../data";
@@ -24,14 +25,14 @@ const Articles = () => {
         <img className="h-[400px] w-[550px] " src={vectorTwo} alt="vectorTwo" />
       </div>
       <motion.div
-        className="lg:w-[80%] justify-center w-[70%] mx-auto lg:my-16 lg:flex md:grid md:grid-cols-2 gap-5"
+        className="lg:w-[80%] w-[70%] mx-auto lg:my-16 flex flex-col items-center lg:flex lg:flex-row lg:justify-center md:grid md:grid-cols-2 md:gap-5"
         animate={animationx}
       >
         {articles.map((article) => {
           return (
             <div
               key={article.id}
-              className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 mr-8 mb-4"
+              className="bg-white w-64 rounded-lg shadow-lg shadow-black-500/50 md:mr-8 mb-4"
             >
               <img
                 className="rounded-lg h-44 mt-0"
@@ -41,7 +42,16 @@ const Articles = () => {
               <div className="p-4">
                 <h2 className="font-bold">{article.topic}</h2>
                 <p className="py-3 text-[#666] text-sm">{article.content}</p>
-                <button className="text-[#4089ED]">Read more</button>
+                <div className="flex items-center h-[100%]">
+                  <button className="text-[#4089ED] mr-2">Read more</button>
+                  <figure>
+                    <img
+                      className="mt-[3px]"
+                      src={articleArrow}
+                      alt="arrowRight"
+                    />
+                  </figure>
+                </div>
               </div>
             </div>
           );

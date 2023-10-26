@@ -11,12 +11,12 @@ const LeadingHealthcare = () => {
       ref={ref}
       className="lg:my-24 my-16 lg:w-[85%] w-[90%] justify-between mx-auto lg:flex block"
     >
-      <motion.div animate={animationy} className="lg:w-2/5 w-5/5 mx-auto">
+      <motion.div animate={animationy} className="lg:w-[530px] w-5/5 mx-auto">
         <img src={trafalgarPic} alt="trafalgarPic" />
       </motion.div>
       <motion.div
         animate={animationy}
-        className="lg:w-2/5 m-8 lg:m-1 lg:mt-12 mt-7"
+        className="lg:w-2/6 m-8 lg:m-1 lg:mt-12 mt-7"
       >
         <h2 className="lg:text-4xl text-3xl font-bold mb-7">
           Leading healthcare Providers
