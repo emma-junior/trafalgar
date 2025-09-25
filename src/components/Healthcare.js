@@ -14,7 +14,7 @@ const Healthcare = () => {
         animate={{ y: -40 }}
         transition={{ type: "spring", duration: 1, bounce: 0.3 }}
       >
-        <div className="lg:w-[35%] lg:mt-40 mt-10">
+        <div className="lg:w-[36%] lg:mt-40 mt-10">
           <h2 className="lg:w-[90%] lg:text-4xl text-3xl font-bold mb-7">
             Virtual Healthcare for you
           </h2>
