@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="absolute right-[80px] -top-20 -z-20">
         <Dots />
       </div>
-      <div className="lg:flex lg:w-[75%]  justify-between mx-auto">
+      <div className="lg:flex lg:w-[75%]  justify-between mx-auto text-lg">
         <div className="lg:w-2/6">
           <div className="flex mb-6">
             <h1 className="bg-white w-10 h-10 rounded-full justify-center">
@@ -19,12 +19,12 @@ const Footer = () => {
               Trafalgar
             </h2>
           </div>
-          <p className="text-white text-base">
+          <p className="text-white text-lg">
             Trafalgar provides progressive, and affordable Healthcare,
             accessible on mobile and online for everyone
           </p>
           <br />
-          <p className="text-white text-base">
+          <p className="text-white text-lg">
             ©Trafalgar PTY LTD 2020. All rights reserved
           </p>
         </div>

@@ -10,7 +10,7 @@ import arrowRight from "../images/arrowRight.svg";
 const Review = () => {
   return (
     <div>
-      <div class="bg-gradient-to-b from-blue-400 via-blue-400 to-blue-500 rounded-lg lg:mt-40 mt-20 lg:w-[70%] w-[90%] flex justify-center mx-auto text-white  relative">
+      <div class="bg-gradient-to-b from-blue-400 via-blue-400 to-blue-500 rounded-lg lg:mt-40 mt-20 lg:w-[65%] w-[90%] flex justify-center mx-auto text-white  relative">
         <div className="absolute right-0 top-1">
           <Dot />
         </div>
@@ -20,7 +20,7 @@ const Review = () => {
           </h2>
           <div class="h-0.5 my-4 bg-white w-10 mx-auto"></div>
           <div class="lg:flex lg:py-6 py-2 lg:w-[80%] mx-auto">
-            <div class="flex m-5 lg:m-1">
+            <div class="flex m-5 lg:m-1 3xl:mr-4">
               <div>
                 <img
                   className="border-4 border-white rounded-full mr-4"
@@ -34,7 +34,7 @@ const Review = () => {
               </div>
             </div>
             <div class="lg:w-1/2 p-4 lg:pt-6">
-              <p class="font-extralight">
+              <p class="font-extralight text-lg">
                 “Our dedicated patient engagement app and web portal allow you
                 to access information instantaneously (no tedeous form, long
                 calls, or administrative hassle) and securely”
@@ -48,10 +48,10 @@ const Review = () => {
       </div>
       <div class="flex w-[100%] justify-center my-6">
         <img className="pt-1 cursor-pointer" src={arrowLeft} alt="arrowleft" />
-        <span class="w-2 h-2 text-blue-300 font-black pl-8 px-1">•</span>
-        <span class="w-2 h-2 text-blue-400 font-black px-1">•</span>
-        <span class="w-2 h-2 text-blue-300 font-black px-1">•</span>
-        <span class="w-2 h-2 text-blue-300 font-black px-1 pr-8">•</span>
+        <span class="w-2 h-2 text-blue-300 font-black pl-8 px-2">•</span>
+        <span class="w-2 h-2 text-blue-400 font-black px-2">•</span>
+        <span class="w-2 h-2 text-blue-300 font-black px-2">•</span>
+        <span class="w-2 h-2 text-blue-300 font-black px-2 pr-8">•</span>
         <img
           className="pt-1 cursor-pointer"
           src={arrowRight}

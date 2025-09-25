@@ -16,13 +16,13 @@ const LeadingHealthcare = () => {
       </motion.div>
       <motion.div
         animate={animationy}
-        className="lg:w-2/6 m-8 lg:m-1 lg:mt-12 mt-7"
+        className="lg:w-[30%] m-8 lg:m-1 lg:mt-12 mt-7 lg:mr-[12%]"
       >
         <h2 className="lg:text-4xl text-3xl font-bold mb-7">
           Leading healthcare Providers
         </h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10"></div>
-        <p className="text-[#666]">
+        <p className="text-[#7D7987] text-lg">
           Trafalgar provides progressive and affordable healthcare, accessible
           on mobile and online for everyone. To us is not just work. We take
           pride in the solutions we deliver

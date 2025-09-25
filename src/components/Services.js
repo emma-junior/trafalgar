@@ -10,11 +10,11 @@ const Services = () => {
   const { ref, animationx, animationy } = useAnimate();
 
   return (
-    <div ref={ref} className="md:mt-64 lg:mt-24 relative">
+    <div ref={ref} className="md:mt-64 3xl:mt-[23rem]  relative">
       <motion.div animate={animationy} className="text-center">
         <h2 className="font-bold text-[36px]">Our services</h2>
         <div className="h-0.5 my-4 bg-gray-900 w-10 mx-auto"></div>
-        <p className="text-[#666] w-2/3 mx-auto my-10">
+        <p className="text-[#7D7987] lg:text-lg w-[55%] mx-auto mt-10 mb-12">
           We provide to you the best choices for you. Adjust it to your health
           needs and make sure your undergo treatment with our highly qualified
           doctors you can consult with us which type of services is suitable for
@@ -29,19 +29,19 @@ const Services = () => {
           <Dots />
         </div>
         <motion.div
-          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 md:w-[80%] lg:w-[75%] w-full justify-center mx-auto "
+          className="grid lg:grid-cols-3 md:grid-cols-2 gap-5 lg:gap-7  md:w-[80%] lg:w-[57%] w-full justify-center mx-auto "
           animate={animationx}
         >
           {services.map((service) => {
             return (
-              <div className=" bg-white w-64 p-7 rounded-md shadow-lg shadow-black-500/50">
+              <div className=" bg-white w-64 p-7 rounded-xl shadow-lg shadow-black-500/50">
                 <img
                   className="w-16 h-16 my-4"
                   src={service.icon}
                   alt="searchDoctor"
                 />
                 <h2 className="font-bold mb-3">{service.title}</h2>
-                <p className="text-[#666] text-sm">{service.content}</p>
+                <p className="text-[#666] text-sm mb-1">{service.content}</p>
               </div>
             );
           })}

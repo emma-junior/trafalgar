@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className="my-8 w-full flex justify-center ">
-      <section className="flex w-[90%] lg:w-[85%]  justify-between">
+      <section className="flex w-[90%] lg:w-[75%]  justify-between">
         <div className="flex w-full  justify-between">
           <div className="flex">
             <h1 className="bg-[#458FF6] w-10 h-10 rounded-full justify-center">
@@ -26,14 +26,14 @@ const Navbar = () => {
           </div>
         </div>
         <motion.ul
-          className="p-3 lg:flex hidden space-x-5 w-full justify-end"
+          className="p-3 lg:flex hidden space-x-7 w-full justify-end"
           initial={{ x: "100vw" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", duration: 1, bounce: 0.3 }}
         >
           {navbarLinks.map((link, index) => {
             return (
-              <li key={index} className="nav">
+              <li key={index} className="nav text-base 3xl:text-lg">
                 {link.name}
               </li>
             );
